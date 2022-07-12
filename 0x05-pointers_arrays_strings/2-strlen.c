@@ -1,36 +1,20 @@
+#include "main.h"
+
 /**
- * _atoi - Find and print the first number in a string as an int
- * @s: String to convert to int
- * Return: The int
+ * _strlen - a function that returns the length of a string
+ * @s: char input
+ * Return: length of the input string
 */
 
-int _atoi(char *s)
+int _strlen(char *s)
 {
-int i, n, m;
+int i = 1, sum = 0;
+char pl = s[0];
 
-i = n = m = 0;
-while (*(s + i) != '\0')
+while (pl != '\0')
 {
-if (*(s + i) == '-')
-m++;
-if (*(s + i) >= '0' && *(s + i) <= '9')
-{
-while (*(s + i) >= '0' && *(s + i) <= '9')
-{
-if (n == 0)
-{
-n = (n * 10) + (*(s + i) -'0');
-n *= -1;
+sum++;
+pl = s[i++];
 }
-else
-n = (n * 10) - (*(s + i) -'0');
-i++;
-}
-if (m % 2 == 0)
-n *= -1;
-return (n);
-}
-i++;
-}
-return (0);
+return (sum);
 }
